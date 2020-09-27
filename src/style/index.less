@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+.react-viewer {
+  transition-duration: 5s;
+}
+
 .@{viewer-prefix-cls} {
 
   &-inline {
@@ -67,7 +71,7 @@
     overflow: hidden;
     width: 40px;
     height: 40px;
-    border-radius: 0 0 0 40px;   
+    border-radius: 0 0 0 40px;
     cursor: pointer;
     z-index: @zIndex + 10;
   }
@@ -180,7 +184,7 @@
     height: @viewer-list-item-height;
     margin-left: @viewer-list-item-img-marginLeft;
     opacity: .5;
-  }  
+  }
 
   &-list > li.active > img {
     opacity: 1;
@@ -220,7 +224,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: white;
-    font-size: 13px;    
+    font-size: 13px;
   }
 
   &-zoomIn:before {
@@ -233,23 +237,23 @@
 
   &-prev:before {
     content: '\ea38';
-  } 
+  }
 
   &-next:before {
     content: '\ea34';
-  } 
+  }
 
   &-close:before {
     content: '\ea0f';
-  } 
+  }
 
   &-rotateLeft:before {
     content: '\e967';
-  }  
+  }
 
   &-rotateRight:before {
     content: '\e968';
-  } 
+  }
 
   &-reset:before {
     content: '\e984';
@@ -257,15 +261,15 @@
 
   &-scaleX:before {
     content: '\ea60';
-  } 
+  }
 
   &-scaleY:before {
     content: '\ea5f';
   }
-  
+
   &-download:before {
     content: '\e9c7';
-  }   
+  }
 }
 
 .circle-loading {
@@ -278,8 +282,8 @@
   animation: spin 1s infinite linear;
 }
 
-@keyframes spin { 
-  100% { 
-    transform: rotate(360deg); 
-  } 
-} 
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

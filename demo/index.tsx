@@ -170,6 +170,9 @@ class App extends React.Component<any, Partial<State>> {
     return (
       <div>
         <nav className="navbar">
+          <div className="navbar__header">
+            面包屑
+          </div>
           <div className="container-fluid">
             <div className="navbar-brand">
               react-viewer

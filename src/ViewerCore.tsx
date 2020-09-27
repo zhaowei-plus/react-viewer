@@ -627,7 +627,7 @@ export default (props: ViewerProps) => {
   });
 
   let viewerStryle: React.CSSProperties = {
-    opacity: (visible && state.visible) ? 1 : 0,
+    opacity: 1,
     display: (visible || state.visible) ? 'block' : 'none',
   };
 
@@ -638,6 +638,10 @@ export default (props: ViewerProps) => {
 
   if (visible && state.visible && !state.loading && state.activeIndex !== null && !state.startLoading) {
     activeImg = getActiveImage();
+  }
+
+  if (!visible) {
+    return null;
   }
 
   return (
@@ -665,25 +669,29 @@ export default (props: ViewerProps) => {
           <Icon type={ActionType.close} />
         </div>
       )}
-      <ViewerCanvas
-        prefixCls={prefixCls}
-        imgSrc={state.loadFailed ? (props.defaultImg.src || activeImg.src) : activeImg.src}
-        visible={visible}
-        width={state.width}
-        height={state.height}
-        top={state.top}
-        left={state.left}
-        rotate={state.rotate}
-        onChangeImgState={handleChangeImgState}
-        onResize={handleResize}
-        zIndex={zIndex + 5}
-        scaleX={state.scaleX}
-        scaleY={state.scaleY}
-        loading={state.loading}
-        drag={drag}
-        container={props.container}
-        onCanvasMouseDown={handleCanvasMouseDown}
-      />
+      {
+        !state.loading && (
+          <ViewerCanvas
+            prefixCls={prefixCls}
+            imgSrc={state.loadFailed ? (props.defaultImg.src || activeImg.src) : activeImg.src}
+            visible={visible}
+            width={state.width}
+            height={state.height}
+            top={state.top}
+            left={state.left}
+            rotate={state.rotate}
+            onChangeImgState={handleChangeImgState}
+            onResize={handleResize}
+            zIndex={zIndex + 5}
+            scaleX={state.scaleX}
+            scaleY={state.scaleY}
+            loading={state.loading}
+            drag={drag}
+            container={props.container}
+            onCanvasMouseDown={handleCanvasMouseDown}
+          />
+        )
+      }
       {props.noFooter || (
         <div className={`${prefixCls}-footer`} style={{ zIndex: zIndex + 5 }}>
           {noToolbar || (

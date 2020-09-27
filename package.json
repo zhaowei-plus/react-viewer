@@ -1,7 +1,7 @@
 {
-  "name": "react-viewer",
-  "version": "3.2.2",
-  "description": "react image viewer",
+  "name": "react-preview",
+  "version": "0.0.1",
+  "description": "React Image Preview",
   "main": "dist/index",
   "scripts": {
     "test": "jest",

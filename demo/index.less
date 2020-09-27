@@ -17,6 +17,18 @@ ul, li {
   width: 100%;
   height: @navbarHeight;
   background-color: #0074d9;
+  position: relative;
+
+  &__header {
+    position: sticky;
+    top: 100px;
+    z-index: 99;
+    width: 100%;
+    padding: 4px 10px;
+    background-color: #ffffff;
+    //border-bottom: 1px solid #e9ecf0;
+    border: 1px solid red;
+  }
 }
 
 .img-fork {
@@ -30,7 +42,7 @@ ul, li {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; 
+  margin-left: auto;
   display: flex;
   align-items: center;
   height: 100%;
